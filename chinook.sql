@@ -28,3 +28,18 @@ JOIN Customer c
 	ON i.CustomerId = c.CustomerId
 WHERE BillingCountry IN ('Brazil');
 
+-- this command shows all employees who are sales agents
+SELECT 
+    e.Employeeid,
+    e.FirstName,
+    e.LastName,
+    e.Phone,
+    e.Fax,
+    e.Email,
+    e.HireDate,
+    e.City,
+    e.State,
+    e.Country,
+    e.PostalCode
+FROM Employee e
+WHERE Title IN ('Sales Support Agent');
