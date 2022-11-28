@@ -43,3 +43,6 @@ SELECT
     e.PostalCode
 FROM Employee e
 WHERE Title IN ('Sales Support Agent');
+
+-- this command filters invoices by country
+SELECT * FROM Invoice ORDER BY BillingCountry DESC;
