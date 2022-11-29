@@ -57,3 +57,16 @@ JOIN Customer c
 	ON c.SupportRepId = e.EmployeeId
 JOIN Invoice i
     ON c.CustomerId = i.CustomerId
+
+-- this command shows the customers and employees associated with each invoice
+    e.FirstName Employee_First_Name,
+    e.LastName Employee_Last_Name,
+    i.Total Invoice_Total,
+    c.FirstName Customer_First_Name,
+    c.LastName Customer_Last_Name,
+    c.Country Customer_Country
+FROM Employee e
+JOIN Customer c
+	ON c.SupportRepId = e.EmployeeId
+JOIN Invoice i
+    ON c.CustomerId = i.CustomerId
