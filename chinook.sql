@@ -46,3 +46,14 @@ WHERE Title IN ('Sales Support Agent');
 
 -- this command filters invoices by country
 SELECT * FROM Invoice ORDER BY BillingCountry DESC;
+
+-- this command shows the invoices associated with each sales agent.
+SELECT
+    e.FirstName,
+    e.LastName,
+    i.InvoiceId
+FROM Employee e
+JOIN Customer c
+	ON c.SupportRepId = e.EmployeeId
+JOIN Invoice i
+    ON c.CustomerId = i.CustomerId
